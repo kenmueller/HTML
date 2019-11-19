@@ -9,9 +9,9 @@ final class HTMLTests: XCTestCase {
 	
 	func testAll() {
 		print(HTML.render {
-			HTMLElement("html")
+			HTMLElement.html
 				.child {
-					HTMLElement("head")
+					HTMLElement.head
 						.child {
 							HTMLElement("title")
 								.child("Ken's Homepage")
@@ -20,14 +20,14 @@ final class HTMLTests: XCTestCase {
 						}
 				}
 				.child {
-					HTMLElement("body")
+					HTMLElement.body
 						.child {
-							HTMLElement("h1")
+							HTMLElement.h1
 								.child("My homepage")
 								.color("blue")
 						}
 						.child {
-							HTMLElement("p")
+							HTMLElement.p
 								.child("My name is Ken")
 						}
 				}
