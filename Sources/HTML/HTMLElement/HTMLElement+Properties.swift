@@ -1,3 +1,5 @@
+import Foundation
+
 public extension HTMLElement {
 	func accept(_ value: String) -> Self {
 		attributes["accept"] = value
@@ -74,13 +76,13 @@ public extension HTMLElement {
 		return `class`(value)
 	}
 
-	func cols(_ value: String) -> Self { // TODO
-		attributes["cols"] = value
+	func cols(_ value: Int) -> Self {
+		attributes["cols"] = .init(value)
 		return self
 	}
 
-	func colspan(_ value: String) -> Self {
-		attributes["colspan"] = value
+	func colspan(_ value: Int) -> Self {
+		attributes["colspan"] = .init(value)
 		return self
 	}
 
@@ -89,13 +91,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func contentEditable(_ value: String) -> Self {
-		attributes["contenteditable"] = value
+	func contentEditable(_ value: Bool) -> Self {
+		attributes["contenteditable"] = value ? "true" : nil
 		return self
 	}
 
-	func controls(_ value: String) -> Self {
-		attributes["controls"] = value
+	func controls(_ value: Bool) -> Self {
+		attributes["controls"] = value ? "" : nil
 		return self
 	}
 
@@ -109,17 +111,12 @@ public extension HTMLElement {
 		return self
 	}
 
-	func dataStar(_ value: String) -> Self {
-		attributes["data-*"] = value
+	func dateTime(_ value: Date) -> Self {
+		attributes["datetime"] = value.description
 		return self
 	}
 
-	func datetime(_ value: String) -> Self {
-		attributes["datetime"] = value
-		return self
-	}
-
-	func `default`(_ value: String) -> Self {
+	func `default`(_ value: String) -> Self { // CURRENT
 		attributes["default"] = value
 		return self
 	}

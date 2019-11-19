@@ -18,6 +18,7 @@ final class HTMLTests: XCTestCase {
 								.class("abc", "def")
 								.class("ghi")
 								.autoFocus()
+								.dateTime(.init())
 						}
 				}
 				.child {
