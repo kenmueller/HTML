@@ -91,12 +91,12 @@ public extension HTMLElement {
 		return self
 	}
 
-	func contentEditable(_ value: Bool) -> Self {
+	func contentEditable(_ value: Bool = true) -> Self {
 		attributes["contenteditable"] = value ? "true" : nil
 		return self
 	}
 
-	func controls(_ value: Bool) -> Self {
+	func controls(_ value: Bool = true) -> Self {
 		attributes["controls"] = value ? "" : nil
 		return self
 	}
@@ -116,13 +116,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func `default`(_ value: String) -> Self { // CURRENT
-		attributes["default"] = value
+	func `default`(_ value: Bool = true) -> Self {
+		attributes["default"] = value ? "" : nil
 		return self
 	}
 
-	func `defer`(_ value: String) -> Self {
-		attributes["defer"] = value
+	func `defer`(_ value: Bool = true) -> Self {
+		attributes["defer"] = value ? "" : nil
 		return self
 	}
 
@@ -136,8 +136,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func disabled(_ value: String) -> Self {
-		attributes["disabled"] = value
+	func disabled(_ value: Bool = true) -> Self {
+		attributes["disabled"] = value ? "" : nil
 		return self
 	}
 
@@ -146,8 +146,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func draggable(_ value: String) -> Self {
-		attributes["draggable"] = value
+	func draggable(_ value: Bool = true) -> Self {
+		attributes["draggable"] = value ? "true" : nil
 		return self
 	}
 
@@ -171,7 +171,7 @@ public extension HTMLElement {
 		return self
 	}
 
-	func formaction(_ value: String) -> Self {
+	func formAction(_ value: String) -> Self {
 		attributes["formaction"] = value
 		return self
 	}
@@ -181,17 +181,17 @@ public extension HTMLElement {
 		return self
 	}
 
-	func hidden(_ value: String) -> Self {
-		attributes["hidden"] = value
+	func hidden(_ value: Bool = true) -> Self {
+		attributes["hidden"] = value ? "" : nil
 		return self
 	}
 
-	func high(_ value: String) -> Self {
-		attributes["high"] = value
+	func high(_ value: Int) -> Self {
+		attributes["high"] = .init(value)
 		return self
 	}
 
-	func href(_ value: String) -> Self {
+	func href(_ value: String) -> Self { // current
 		attributes["href"] = value
 		return self
 	}
