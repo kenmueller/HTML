@@ -60,6 +60,10 @@ public final class HTMLElement {
 		return self
 	}
 	
+	public func renderAsRoot() -> String {
+		"<!DOCTYPE html>\(render())"
+	}
+	
 	public func render() -> String {
 		if let name = name {
 			let startingTag = "<\(name)\(renderAttributes())\(renderStyles())>"
