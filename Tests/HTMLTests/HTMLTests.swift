@@ -25,6 +25,7 @@ final class HTMLTests: XCTestCase {
 							HTMLElement.h1
 								.child("My homepage")
 								.color("blue")
+								.zIndex("5", important: true)
 						}
 						.child {
 							HTMLElement.p
