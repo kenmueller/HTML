@@ -7,6 +7,12 @@ final class HTMLTests: XCTestCase {
 		("testAll", testAll)
 	]
 	
+	var h1WithBlueColor: HTMLElement {
+		HTMLElement.h1
+			.child("This is my homepage")
+			.color("blue")
+	}
+	
 	func testAll() {
 		print(HTML.render {
 			HTMLElement.html
@@ -15,25 +21,15 @@ final class HTMLTests: XCTestCase {
 						.child {
 							HTMLElement.title
 								.child("Ken's Homepage")
-								.class("abc", "def")
-								.class("ghi")
-								.autoFocus()
-								.dateTime(.init())
 						}
 				}
 				.child {
 					HTMLElement.body
 						.child {
-							HTMLElement.h1
-								.child("My homepage")
-								.color("blue")
-								.zIndex("5", important: true)
-								.autoFocus()
+							h1WithBlueColor
+								.background("red", important: true)
 						}
-						.child {
-							HTMLElement.p
-								.child("My name is Ken")
-						}
+						.child { h1WithBlueColor }
 				}
 		})
 	}

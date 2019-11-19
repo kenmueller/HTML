@@ -191,7 +191,7 @@ public extension HTMLElement {
 		return self
 	}
 
-	func href(_ value: String) -> Self { // current
+	func href(_ value: String) -> Self {
 		attributes["href"] = value
 		return self
 	}
@@ -211,8 +211,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func ismap(_ value: String) -> Self {
-		attributes["ismap"] = value
+	func isMap(_ value: Bool = true) -> Self {
+		attributes["ismap"] = value ? "" : nil
 		return self
 	}
 
@@ -236,13 +236,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func loop(_ value: String) -> Self {
-		attributes["loop"] = value
+	func loop(_ value: Bool = true) -> Self {
+		attributes["loop"] = value ? "" : nil
 		return self
 	}
 
-	func low(_ value: String) -> Self {
-		attributes["low"] = value
+	func low(_ value: Int) -> Self {
+		attributes["low"] = .init(value)
 		return self
 	}
 
@@ -251,8 +251,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func maxLength(_ value: String) -> Self {
-		attributes["maxlength"] = value
+	func maxLength(_ value: Int) -> Self {
+		attributes["maxlength"] = .init(value)
 		return self
 	}
 
@@ -271,13 +271,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func multiple(_ value: String) -> Self {
-		attributes["multiple"] = value
+	func multiple(_ value: Bool = true) -> Self {
+		attributes["multiple"] = value ? "" : nil
 		return self
 	}
 
-	func muted(_ value: String) -> Self {
-		attributes["muted"] = value
+	func muted(_ value: Bool = true) -> Self {
+		attributes["muted"] = value ? "" : nil
 		return self
 	}
 
@@ -286,8 +286,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func noValidate(_ value: String) -> Self {
-		attributes["novalidate"] = value
+	func noValidate(_ value: Bool = true) -> Self {
+		attributes["novalidate"] = value ? "" : nil
 		return self
 	}
 
@@ -626,13 +626,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func open(_ value: String) -> Self {
-		attributes["open"] = value
+	func open(_ value: Bool = true) -> Self {
+		attributes["open"] = value ? "" : nil
 		return self
 	}
 
-	func optimum(_ value: String) -> Self {
-		attributes["optimum"] = value
+	func optimum<T: Numeric>(_ value: T) -> Self {
+		attributes["optimum"] = .init(value)
 		return self
 	}
 
@@ -656,8 +656,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func readOnly(_ value: String) -> Self {
-		attributes["readonly"] = value
+	func readOnly(_ value: Bool = true) -> Self {
+		attributes["readonly"] = value ? "" : nil
 		return self
 	}
 
@@ -666,28 +666,28 @@ public extension HTMLElement {
 		return self
 	}
 
-	func required(_ value: String) -> Self {
-		attributes["required"] = value
+	func required(_ value: Bool = true) -> Self {
+		attributes["required"] = value ? "" : nil
 		return self
 	}
 
-	func reversed(_ value: String) -> Self {
-		attributes["reversed"] = value
+	func reversed(_ value: Bool = true) -> Self {
+		attributes["reversed"] = value ? "" : nil
 		return self
 	}
 
-	func rows(_ value: String) -> Self {
-		attributes["rows"] = value
+	func rows(_ value: Int) -> Self {
+		attributes["rows"] = .init(value)
 		return self
 	}
 
-	func rowspan(_ value: String) -> Self {
-		attributes["rowspan"] = value
+	func rowspan(_ value: Int) -> Self {
+		attributes["rowspan"] = .init(value)
 		return self
 	}
 
-	func sandbox(_ value: String) -> Self {
-		attributes["sandbox"] = value
+	func sandbox(_ value: Bool = true) -> Self {
+		attributes["sandbox"] = value ? "" : nil
 		return self
 	}
 
@@ -696,8 +696,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func selected(_ value: String) -> Self {
-		attributes["selected"] = value
+	func selected(_ value: Bool = true) -> Self {
+		attributes["selected"] = value ? "" : nil
 		return self
 	}
 
@@ -706,8 +706,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func size(_ value: String) -> Self {
-		attributes["size"] = value
+	func size(_ value: Int) -> Self {
+		attributes["size"] = .init(value)
 		return self
 	}
 
@@ -716,13 +716,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func span(_ value: String) -> Self {
-		attributes["span"] = value
+	func span(_ value: Int) -> Self {
+		attributes["span"] = .init(value)
 		return self
 	}
 
-	func spellCheck(_ value: String) -> Self {
-		attributes["spellcheck"] = value
+	func spellCheck(_ value: Bool = true) -> Self {
+		attributes["spellcheck"] = value ? "true" : nil
 		return self
 	}
 
@@ -751,13 +751,13 @@ public extension HTMLElement {
 		return self
 	}
 
-	func step(_ value: String) -> Self {
-		attributes["step"] = value
+	func step(_ value: Int) -> Self {
+		attributes["step"] = .init(value)
 		return self
 	}
 
-	func tabIndex(_ value: String) -> Self {
-		attributes["tabindex"] = value
+	func tabIndex(_ value: Int) -> Self {
+		attributes["tabindex"] = .init(value)
 		return self
 	}
 
@@ -771,8 +771,8 @@ public extension HTMLElement {
 		return self
 	}
 
-	func translate(_ value: String) -> Self {
-		attributes["translate"] = value
+	func noTranslate() -> Self {
+		attributes["translate"] = "no"
 		return self
 	}
 
