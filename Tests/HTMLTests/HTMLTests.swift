@@ -13,7 +13,7 @@ final class HTMLTests: XCTestCase {
 				.child {
 					HTMLElement.head
 						.child {
-							HTMLElement("title")
+							HTMLElement.title
 								.child("Ken's Homepage")
 								.class("abc", "def")
 								.class("ghi")

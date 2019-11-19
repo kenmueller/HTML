@@ -81,7 +81,7 @@ public final class HTMLElement {
 	}
 	
 	func renderStyles() -> String {
-		if attributes.isEmpty { return "" }
+		if styles.isEmpty { return "" }
 		let result = styles.map { property, value in
 			"\(property):\(value.0)\(value.1 ? "!important" : "")"
 		}
