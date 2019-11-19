@@ -1,12 +1,12 @@
 public final class HTMLElement {
-	let name: String?
-	let value: String?
+	public let name: String?
+	public let value: String?
 	
-	var children: [HTMLElement]
-	var attributes: [String: String]
-	var styles: [String: (String, Bool)]
+	public var children: [HTMLElement]
+	public var attributes: [String: String]
+	public var styles: [String: (String, Bool)]
 	
-	init(
+	public init(
 		_ name: String,
 		children: [HTMLElement] = [],
 		attributes: [String: String] = [:],
@@ -19,7 +19,7 @@ public final class HTMLElement {
 		self.styles = styles
 	}
 	
-	init(string: String) {
+	public init(string: String) {
 		name = nil
 		value = string
 		children = []
@@ -27,7 +27,7 @@ public final class HTMLElement {
 		styles = [:]
 	}
 	
-	var isVoidElement: Bool {
+	public var isVoidElement: Bool {
 		name == "area" ||
 		name == "base" ||
 		name == "br" ||
@@ -46,17 +46,17 @@ public final class HTMLElement {
 		name == "wbr"
 	}
 	
-	func child(_ element: () -> HTMLElement) -> Self {
+	public func child(_ element: () -> HTMLElement) -> Self {
 		children.append(element())
 		return self
 	}
 	
-	func child(_ string: String) -> Self {
+	public func child(_ string: String) -> Self {
 		children.append(.init(string: string))
 		return self
 	}
 	
-	func render() -> String {
+	public func render() -> String {
 		if let name = name {
 			let startingTag = "<\(name)\(renderAttributes())\(renderStyles())>"
 			return isVoidElement
@@ -66,13 +66,13 @@ public final class HTMLElement {
 		return value ?? ""
 	}
 	
-	func renderChildren() -> String {
+	public func renderChildren() -> String {
 		children.reduce("") { acc, element in
 			"\(acc)\(element.render())"
 		}
 	}
 	
-	func renderAttributes() -> String {
+	public func renderAttributes() -> String {
 		if attributes.isEmpty { return "" }
 		let result = attributes.map { attribute, value in
 			"\(attribute)\(value.isEmpty ? "" : "=\"\(value)\"")"
@@ -80,7 +80,7 @@ public final class HTMLElement {
 		return " \(result.joined(separator: " "))"
 	}
 	
-	func renderStyles() -> String {
+	public func renderStyles() -> String {
 		if styles.isEmpty { return "" }
 		let result = styles.map { property, value in
 			"\(property):\(value.0)\(value.1 ? "!important" : "")"

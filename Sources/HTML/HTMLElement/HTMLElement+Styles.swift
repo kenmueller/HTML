@@ -1,4 +1,4 @@
-extension HTMLElement {
+public extension HTMLElement {
 	func alignContent(_ value: String, important: Bool = false) -> Self {
 		styles["align-content"] = (value, important)
 		return self

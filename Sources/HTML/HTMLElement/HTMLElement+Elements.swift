@@ -1,4 +1,4 @@
-extension HTMLElement {
+public extension HTMLElement {
 	static var a: HTMLElement {
 		.init("a")
 	}

@@ -1,4 +1,4 @@
-extension HTMLElement {
+public extension HTMLElement {
 	func accept(_ value: String) -> Self {
 		attributes["accept"] = value
 		return self
