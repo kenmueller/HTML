@@ -1,6 +1,6 @@
 # HTML
 
-> A better, easier way to write HTML in Swift
+> A faster, easier way to write HTML in Swift
 
 ## Basic Structure
 
