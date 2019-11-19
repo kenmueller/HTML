@@ -186,7 +186,7 @@ public extension HTMLElement {
 		return self
 	}
 
-	func high(_ value: Int) -> Self {
+	func high<T: Numeric & LosslessStringConvertible>(_ value: T) -> Self {
 		attributes["high"] = .init(value)
 		return self
 	}
@@ -241,7 +241,7 @@ public extension HTMLElement {
 		return self
 	}
 
-	func low(_ value: Int) -> Self {
+	func low<T: Numeric & LosslessStringConvertible>(_ value: T) -> Self {
 		attributes["low"] = .init(value)
 		return self
 	}
@@ -631,7 +631,7 @@ public extension HTMLElement {
 		return self
 	}
 
-	func optimum<T: Numeric>(_ value: T) -> Self {
+	func optimum<T: Numeric & LosslessStringConvertible>(_ value: T) -> Self {
 		attributes["optimum"] = .init(value)
 		return self
 	}

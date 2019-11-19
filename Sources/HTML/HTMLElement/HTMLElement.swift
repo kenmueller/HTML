@@ -4,7 +4,7 @@ public final class HTMLElement {
 	
 	public var children: [HTMLElement]
 	public var attributes: [String: String]
-	public var styles: [String: (String, Bool)]
+	public var styles: [String: (value: String, isImportant: Bool)]
 	
 	public init(
 		_ name: String,
@@ -87,7 +87,7 @@ public final class HTMLElement {
 	public func renderStyles() -> String {
 		if styles.isEmpty { return "" }
 		let result = styles.map { property, value in
-			"\(property):\(value.0)\(value.1 ? "!important" : "")"
+			"\(property):\(value.value)\(value.isImportant ? "!important" : "")"
 		}
 		return " style=\"\(result.joined(separator: ";"))\""
 	}
