@@ -19,9 +19,9 @@ public final class HTMLElement {
 		self.styles = styles
 	}
 	
-	public init(string: String) {
+	public init(text: String) {
 		name = nil
-		value = string
+		value = text
 		children = []
 		attributes = [:]
 		styles = [:]
@@ -46,13 +46,17 @@ public final class HTMLElement {
 		name == "wbr"
 	}
 	
-	public func child(_ element: () -> HTMLElement) -> Self {
-		children.append(element())
+	public func child(_ element: HTMLElement) -> Self {
+		children.append(element)
 		return self
 	}
 	
-	public func child(_ string: String) -> Self {
-		children.append(.init(string: string))
+	public func child(_ element: () -> HTMLElement) -> Self {
+		child(element())
+	}
+	
+	public func child(_ text: String) -> Self {
+		children.append(.init(text: text))
 		return self
 	}
 	

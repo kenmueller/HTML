@@ -17,6 +17,7 @@ final class HTMLTests: XCTestCase {
 								.child("Ken's Homepage")
 								.class("abc", "def")
 								.class("ghi")
+								.autoFocus()
 						}
 				}
 				.child {
@@ -26,6 +27,7 @@ final class HTMLTests: XCTestCase {
 								.child("My homepage")
 								.color("blue")
 								.zIndex("5", important: true)
+								.autoFocus()
 						}
 						.child {
 							HTMLElement.p
