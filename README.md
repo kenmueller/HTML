@@ -2,6 +2,14 @@
 
 > A faster, easier way to write HTML in Swift
 
+## Download
+
+- File -> Swift Packages -> Add Package Dependency...
+- Select your project
+- Enter `https://github.com/kenmueller/HTML` for the package repository URL
+- Select **Branch**: master
+- Click **Finish**
+
 ## Basic Structure
 
 Each `HTMLElement` has children. Each child can either be text, or another `HTMLElement`. You add children like this:
