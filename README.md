@@ -34,6 +34,17 @@ HTMLElement.body
 
 As seen above, you can add multiple children by chaining  `.child`.
 
+One cool shorthand that works for void elements without any style or attributes is this:
+
+```swift
+HTMLElement.p
+    .child("Text")
+    .child(.br)
+    .child("Other text")
+    .child(.hr)
+    .child("Some other text")
+```
+
 You can also add attributes to an `HTMLElement` like this:
 
 ```swift
