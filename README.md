@@ -64,9 +64,9 @@ HTML.render {
     HTMLElement.h1
         .child("This is some header text")
         .child {
-	        HTMLElement.span
-		        .color("blue")
-		        .child("This is some blue text")
+            HTMLElement.span
+                .color("blue")
+                .child("This is some blue text")
         }
 }
 ```
