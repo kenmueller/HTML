@@ -150,22 +150,8 @@ public extension HTMLElement {
 	/// 	- important: If this style should be marked with `!important`. By default, this is `false`.
 	///
 	/// - Returns: The modified `HTMLElement`.
-	func animationTiming/// Applies a CSS style to this `HTMLElement`.
-	///
-	/// - Parameters:
-	/// 	- value: The new CSS property value.
-	/// 	- important: If this style should be marked with `!important`. By default, this is `false`.
-	///
-	/// - Returns: The modified `HTMLElement`.
-	function(_ value: String, important: Bool = false) -> Self {
-		styles["animation-timing-/// Applies a CSS style to this `HTMLElement`.
-	///
-	/// - Parameters:
-	/// 	- value: The new CSS property value.
-	/// 	- important: If this style should be marked with `!important`. By default, this is `false`.
-	///
-	/// - Returns: The modified `HTMLElement`.
-	function"] = (value, important)
+	func animationTimingFunction(_ value: String, important: Bool = false) -> Self {
+		styles["animation-timing-function"] = (value, important)
 		return self
 	}
 
@@ -2300,22 +2286,8 @@ public extension HTMLElement {
 	/// 	- important: If this style should be marked with `!important`. By default, this is `false`.
 	///
 	/// - Returns: The modified `HTMLElement`.
-	func transitionTiming/// Applies a CSS style to this `HTMLElement`.
-	///
-	/// - Parameters:
-	/// 	- value: The new CSS property value.
-	/// 	- important: If this style should be marked with `!important`. By default, this is `false`.
-	///
-	/// - Returns: The modified `HTMLElement`.
-	function(_ value: String, important: Bool = false) -> Self {
-		styles["transition-timing-/// Applies a CSS style to this `HTMLElement`.
-	///
-	/// - Parameters:
-	/// 	- value: The new CSS property value.
-	/// 	- important: If this style should be marked with `!important`. By default, this is `false`.
-	///
-	/// - Returns: The modified `HTMLElement`.
-	function"] = (value, important)
+	func transitionTimingFunction(_ value: String, important: Bool = false) -> Self {
+		styles["transition-timing-function"] = (value, important)
 		return self
 	}
 
