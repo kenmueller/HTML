@@ -83,6 +83,7 @@ public final class HTMLElement {
 	///                      append to the element's children.
 	///
 	/// - Returns: The newly modified `HTMLElement`.
+	@discardableResult
 	public func child(_ element: HTMLElement) -> Self {
 		children.append(element)
 		return self
@@ -94,6 +95,7 @@ public final class HTMLElement {
 	///                      you want to append to the element's children.
 	///
 	/// - Returns: The newly modified `HTMLElement`.
+	@discardableResult
 	public func child(_ element: () -> HTMLElement) -> Self {
 		child(element())
 	}
@@ -104,6 +106,7 @@ public final class HTMLElement {
 	///                   children.
 	///
 	/// - Returns: The newly modified `HTMLElement`.
+	@discardableResult
 	public func child(_ text: String) -> Self {
 		children.append(.init(text: text))
 		return self
